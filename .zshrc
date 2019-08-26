@@ -2,7 +2,7 @@
 HISTFILE=~/.histfile
 HISTSIZE=10000
 SAVEHIST=10000
-setopt autocd extendedglob notify
+setopt autocd beep extendedglob nomatch notify
 bindkey -e
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
@@ -59,8 +59,6 @@ autoload -U promptinit
 promptinit
 #prompt bigfade
 
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
 export TERM="xterm-256color"
 
 [[ -s /usr/share/nvm/nvm.sh ]] && source /usr/share/nvm/nvm.sh
@@ -72,3 +70,5 @@ which omniprompt > /dev/null || cargo install --git https://github.com/spease/om
 PROMPT='$(omniprompt $?)'
 PS2=" %B%F{blue}>%b%f "
 setopt promptsubst
+
+test -e /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh && source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
