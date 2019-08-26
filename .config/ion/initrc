@@ -1,0 +1,8 @@
+source "${HOME}/.profile"
+let HISTFILE="${HOME}/.histfile"
+export TERM="xterm-256color"
+
+which omniprompt > /dev/null || cargo install --git https://github.com/spease/omniprompt.git
+fn PROMPT
+  && omniprompt 0 || omniprompt "E"
+end
