@@ -3,7 +3,6 @@ set background=dark
 
 " Positional "
 set number
-set cursorcolumn
 set cursorline
 
 " Indentation "
@@ -34,10 +33,13 @@ call plug#begin('~/.vim/plugged')
   endfunction
   Plug 'PProvost/vim-ps1'
   Plug 'andreasvc/vim-256noir'
-  Plug 'ctrlpvim/ctrlp.vim'
+  " Plug 'ctrlpvim/ctrlp.vim'
   Plug 'dyng/ctrlsf.vim'
-  Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+  Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+  Plug 'junegunn/fzf.vim'
+  Plug 'kchmck/vim-coffee-script'
   Plug 'morhetz/gruvbox'
+  Plug 'puremourning/vimspector'
   Plug 'rust-lang/rust.vim'
   Plug 'w0rp/ale'
   " ciaranm/inkpot
@@ -62,7 +64,7 @@ let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_root_markers = [ 'Cargo.toml', 'pom.xml', '.p4ignore' ]
 if executable('rg')
   set grepprg=rg\ --color=never
-  let g:ctrlp_user_command = 'rg %s --files --color=never --glob ""'
+  let g:ctrlp_user_command = 'rg %s --files --color=never --no-messages --glob ""'
   let g:ctrlp_use_caching = 0
 endif
 
@@ -75,6 +77,9 @@ nmap     <C-F>p <Plug>CtrlSFPwordPath
 nnoremap <C-F>o :CtrlSFOpen<CR>
 nnoremap <C-F>t :CtrlSFToggle<CR>
 inoremap <C-F>t <Esc>:CtrlSFToggle<CR>
+
+" fzf
+nmap <C-P> :FZF<CR>
 
 " netrw
 let g:netrw_banner = 0
