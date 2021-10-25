@@ -22,4 +22,4 @@ type "cargo" > /dev/null && test -x "${HOME}/.cargo/bin/omniprompt" || cargo ins
 
 # Install vim-plug
 test -e ~/.vim/autoload/plug.vim || curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim && vim -c 'PlugInstall' -c 'qa!'
