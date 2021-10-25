@@ -61,6 +61,8 @@ promptinit
 
 export TERM="xterm-256color"
 
+source ~/.profile
+
 [[ -s /usr/share/nvm/nvm.sh ]] && source /usr/share/nvm/nvm.sh
 NVM_DIR="$HOME/.nvm"
 
