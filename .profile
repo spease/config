@@ -1,5 +1,5 @@
 # NB: Needs to remain compatible with bash/dash/sh/zsh and ion !!
-export PATH="${HOME}/.cargo/bin:${PATH}"
+type "cargo" > /dev/null && export PATH="${HOME}/.cargo/bin:${PATH}"
 
 # For ion compatibility
 type "source-sh" > /dev/null || alias source-sh='source'
