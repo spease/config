@@ -2,6 +2,10 @@ source-sh "${HOME}/.profile"
 let HISTFILE="${HOME}/.histfile"
 export TERM="xterm-256color"
 
+if exists -b tmux > /dev/null && not exists -s TMUX
+    tmux attach -t default || tmux new -s default
+end
+
 which omniprompt > /dev/null || cargo install --git https://github.com/spease/omniprompt.git
 fn PROMPT
   && omniprompt 0 || omniprompt "E"
