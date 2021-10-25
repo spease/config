@@ -66,7 +66,6 @@ NVM_DIR="$HOME/.nvm"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-which omniprompt > /dev/null || cargo install --git https://github.com/spease/omniprompt.git || cargo install --git https://github.com/spease/omniprompt.git --no-default-features
 PROMPT='$(omniprompt $?)'
 PS2=" %B%F{blue}>%b%f "
 setopt promptsubst
