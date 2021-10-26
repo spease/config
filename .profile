@@ -21,4 +21,4 @@ export NVM_DIR="${HOME}/.nvm"
 type "cargo" > /dev/null && test -x "${HOME}/.cargo/bin/omniprompt" || cargo install --git https://github.com/spease/omniprompt.git || cargo install --git https://github.com/spease/omniprompt.git --no-default-features
 
 # Install vim-plug
-test -e "${HOME}/.vim/autoload/plug.vim" || ( curl -fLo ~/.vim/autoload/plug.vim --create-dirs \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim && vim -c 'PlugInstall' -c 'qa!' )
+! test -e "${HOME}/.vim/autoload/plug.vim" && curl -fLo ~/.vim/autoload/plug.vim --create-dirs \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim && vim -c 'PlugInstall' -c 'qa!'
