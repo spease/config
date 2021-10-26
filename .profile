@@ -25,7 +25,7 @@ type "cargo" > /dev/null && test -x "${HOME}/.cargo/bin/omniprompt" || cargo ins
 
 # Start ssh-agent if needed
 export SSH_AUTH_SOCK="${HOME}/.ssh/ssh-agent.$(hostname).sock"
-ssh-add -l 2>/dev/null >/dev/null
+ssh-add -l >/dev/null # Can't redirect stderr due to ion ^> vs sh 2>
 test $? -ge 2 && ssh-agent -a "${SSH_AUTH_SOCK}" >/dev/null
 
 # Set color shell
