@@ -65,8 +65,11 @@ source ~/.profile
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-PROMPT='$(omniprompt $?)'
-PS2=" %B%F{blue}>%b%f "
-setopt promptsubst
+if type "omniprompt" > /dev/null; then
+  PROMPT='$(omniprompt $?)'
+  PS2=" %B%F{blue}>%b%f "
+  RPROMPT=
+  setopt promptsubst
+fi
 
 test -e /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh && source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
