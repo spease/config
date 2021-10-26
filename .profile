@@ -15,7 +15,7 @@ alias config="/usr/bin/git --git-dir=${HOME}/.cfg/ --work-tree=${HOME}"
 type "exa" > /dev/null && alias ls='exa' || alias ls='ls --color=auto'
 type "exa" > /dev/null && alias ll='exa -alF' || alias ll='ls -al'
 
-# [[ -s /usr/share/nvm/nvm.sh ]] && source /usr/share/nvm/nvm.sh
+test -s /usr/share/nvm/nvm.sh && source /usr/share/nvm/nvm.sh
 export NVM_DIR="${HOME}/.nvm"
 
 # Install omniprompt
