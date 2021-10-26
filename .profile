@@ -12,8 +12,7 @@ type "source-sh" > /dev/null || alias source-sh='source'
 alias config-init='echo "git clone --bare git\@github.com:spease/config.git \${HOME}/.cfg && git --git-dir=\${HOME}/.cfg config --local status.showUntrackedFiles no && alias config=\"/usr/bin/git --git-dir=\${HOME}/.cfg/ --work-tree=\${HOME} && config checkout"'
 alias config="/usr/bin/git --git-dir=${HOME}/.cfg/ --work-tree=${HOME}"
 
-type "exa" > /dev/null && alias ls='exa' || alias ls='ls --color=auto'
-type "exa" > /dev/null && alias ll='exa -alF' || alias ll='ls -al'
+type "exa" > /dev/null && alias ls='exa' && alias ll='exa -alF' || alias ll='ls -al' && [ "$(uname)" = "Linux" ] && alias ls='ls --color=auto'
 
 test -s /usr/share/nvm/nvm.sh && source /usr/share/nvm/nvm.sh
 export NVM_DIR="${HOME}/.nvm"
