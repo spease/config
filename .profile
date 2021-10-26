@@ -24,8 +24,12 @@ type "cargo" > /dev/null && test -x "${HOME}/.cargo/bin/omniprompt" || cargo ins
 ! test -e "${HOME}/.vim/autoload/plug.vim" && curl -fLo ~/.vim/autoload/plug.vim --create-dirs \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim && vim -c 'PlugInstall' -c 'qa!'
 
 # Start ssh-agent if needed
-export SSH_AUTH_SOCK=~/.ssh/ssh-agent.$HOSTNAME.sock
+export SSH_AUTH_SOCK="${HOME}/.ssh/ssh-agent.$(hostname).sock"
 ssh-add -l 2>/dev/null >/dev/null
-if [ $? -ge 2 ]; then
-  ssh-agent -a "$SSH_AUTH_SOCK" >/dev/null
-fi
+test $? -ge 2 && ssh-agent -a "${SSH_AUTH_SOCK}" >/dev/null
+
+# Set color shell
+export TERM="xterm-256color"
+
+# Start tmux and attach if possible
+type "tmux" > /dev/null && tmux new -A -s default

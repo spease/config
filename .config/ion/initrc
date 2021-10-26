@@ -1,11 +1,6 @@
 source "${HOME}/.profile"
 let HISTFILE="${HOME}/.histfile"
-export TERM="xterm-256color"
-
-if exists -b tmux > /dev/null && not exists -s TMUX
-    tmux attach -t default || tmux new -s default
-end
 
 fn PROMPT
-  && omniprompt 0 || omniprompt "E"
+  && omniprompt 0 || omniprompt "$?"
 end
