@@ -1,12 +1,12 @@
 # NB: Needs to remain compatible with bash/dash/sh/zsh and ion !!
 
+# For ion compatibility
+type "source-sh" > /dev/null || alias source-sh='source'
+
 # Setup nix
 test -e "${HOME}/.nix-profile/etc/profile.d/nix.sh" && source-sh "${HOME}/.nix-profile/etc/profile.d/nix.sh"
 
 type "cargo" > /dev/null && export PATH="${HOME}/.cargo/bin:${PATH}"
-
-# For ion compatibility
-type "source-sh" > /dev/null || alias source-sh='source'
 
 # https://medium.com/@augusteo/simplest-way-to-sync-dotfiles-and-config-using-git-14051af8703a
 alias config-init='echo "git clone --bare git\@github.com:spease/config.git \${HOME}/.cfg && git --git-dir=\${HOME}/.cfg config --local status.showUntrackedFiles no && alias config=\"/usr/bin/git --git-dir=\${HOME}/.cfg/ --work-tree=\${HOME} && config checkout"'
