@@ -3,7 +3,7 @@
 # Font configuration (changes require restart)
 font:
   # Point size of the font
-  size: 14.0
+  size: 12.0
 
 # Colors (Tomorrow Night Bright)
 colors:
