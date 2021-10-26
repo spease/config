@@ -65,8 +65,8 @@ let g:ctrlp_root_markers = [ 'Cargo.toml', 'pom.xml', '.p4ignore' ]
 if executable('rg')
   set grepprg=rg\ --color=never
   let g:ctrlp_user_command = 'rg %s --files --color=never --no-messages --glob ""'
-  let g:ctrlp_use_caching = 0
 endif
+let g:ctrlp_clear_cache_on_exit = 0
 
 " ctrlsf
 nmap     <C-F>f <Plug>CtrlSFPrompt
