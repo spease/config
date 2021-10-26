@@ -1,4 +1,8 @@
 # NB: Needs to remain compatible with bash/dash/sh/zsh and ion !!
+
+# Setup nix
+test -e "${HOME}/.nix-profile/etc/profile.d/nix.sh" && source-sh "${HOME}/.nix-profile/etc/profile.d/nix.sh"
+
 type "cargo" > /dev/null && export PATH="${HOME}/.cargo/bin:${PATH}"
 
 # For ion compatibility
@@ -13,9 +17,6 @@ type "exa" > /dev/null && alias ll='exa -alF' || alias ll='ls -al'
 
 # [[ -s /usr/share/nvm/nvm.sh ]] && source /usr/share/nvm/nvm.sh
 export NVM_DIR="${HOME}/.nvm"
-
-# Setup nix
-test -e "${HOME}/.nix-profile/etc/profile.d/nix.sh" && source-sh "${HOME}/.nix-profile/etc/profile.d/nix.sh"
 
 # Install omniprompt
 type "cargo" > /dev/null && test -x "${HOME}/.cargo/bin/omniprompt" || cargo install --git https://github.com/spease/omniprompt.git || cargo install --git https://github.com/spease/omniprompt.git --no-default-features
