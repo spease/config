@@ -34,4 +34,4 @@ test $? -ge 2 && ssh-agent -a "${SSH_AUTH_SOCK}" >/dev/null
 export TERM='xterm-256color'
 
 # Start tmux and attach if possible
-type "tmux" > /dev/null && tmux new -A -s default
+type 'tmux' > /dev/null && tmux new-session -A -s0
