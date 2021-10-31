@@ -49,3 +49,10 @@ colors:
 ￼   magenta: '0xcc99cc'
 ￼   cyan:    '0x66cccc'
 ￼   white:   '0xdddddd'
+
+shell:
+  program: /run/current-system/sw/bin/tmux
+  args:
+    - new
+    - -A
+    - -s0
