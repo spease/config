@@ -4,6 +4,8 @@
 type 'source-sh' > /dev/null || alias source-sh='source'
 
 # Setup nix
+test -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' && source-sh '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
+test -e /etc/static/bashrc && source-sh "$(cat /etc/static/bashrc | grep -o '/nix/store/[0-9a-z]\{32\}-set-environment')"
 test -e "${HOME}/.nix-profile/etc/profile.d/nix.sh" && source-sh "${HOME}/.nix-profile/etc/profile.d/nix.sh"
 
 type 'cargo' > /dev/null && export PATH="${HOME}/.cargo/bin:${PATH}"
