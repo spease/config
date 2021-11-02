@@ -1,2 +1,8 @@
+nonzero_exit_errors = true
 prompt = "omniprompt"
 skip_welcome_message = true
+
+[color_config]
+header_color = "rb"
+index_color = "rb"
+separator_color = "r"
