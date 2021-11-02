@@ -1,7 +1,8 @@
 #!/bin/sh
 # NB: Needs to remain compatible with bash/dash/sh/zsh and ion !!
+
 # For ion compatibility
-! type 'source-sh' > /dev/null && alias source-sh='.'
+! type -p 'source-sh' > /dev/null && alias source-sh='.'
 
 # Setup nix
 test -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' && source-sh '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
