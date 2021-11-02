@@ -51,8 +51,7 @@ colors:
 ￼   white:   '0xdddddd'
 
 shell:
-  program: /run/current-system/sw/bin/tmux
+  program: /bin/sh
   args:
-    - new
-    - -A
-    - -s0
+    - -c
+    - "test -x /run/current-system/sw/bin/tmux && /run/current-system/sw/bin/tmux new -As0 || test -x /bin/tmux && /bin/tmux new -As0 || test -x /bin/zsh && /bin/zsh || test -x /bin/bash && /bin/bash || /bin/sh"
