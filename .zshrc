@@ -59,11 +59,7 @@ autoload -U promptinit
 promptinit
 #prompt bigfade
 
-export TERM="xterm-256color"
-
 source ~/.profile
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 if type "omniprompt" > /dev/null; then
   PROMPT='$(omniprompt $?)'
@@ -72,4 +68,5 @@ if type "omniprompt" > /dev/null; then
   setopt promptsubst
 fi
 
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 test -e /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh && source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
