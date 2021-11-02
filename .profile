@@ -26,8 +26,7 @@ export NVM_DIR="${HOME}/.nvm"
 ! test -e "${HOME}/.vim/autoload/plug.vim" && curl -fLo ~/.vim/autoload/plug.vim --create-dirs \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim && vim -c 'PlugInstall' -c 'qa!'
 
 # Start ssh-agent if needed
-HOSTNAME="$(hostname)"
-export SSH_AUTH_SOCK="${HOME}/.ssh/ssh-agent.${HOSTNAME}.sock"
+export SSH_AUTH_SOCK="${HOME}/.ssh/ssh-agent.$(hostname).sock"
 ssh-add -l >/dev/null # Can't redirect stderr due to ion ^> vs sh 2>
 test $? -ge 2 && ssh-agent -a "${SSH_AUTH_SOCK}" >/dev/null
 
