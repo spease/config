@@ -1,0 +1,1 @@
+type -p 'exa' > /dev/null && exa || test "$(uname)" = 'Linux' && /bin/ls --color=auto || /bin/ls

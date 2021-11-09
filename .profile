@@ -20,6 +20,8 @@ export NVM_DIR="${HOME}/.nvm"
 # Install vim-plug
 ! test -e "${HOME}/.vim/autoload/plug.vim" && curl -fLo ~/.vim/autoload/plug.vim --create-dirs \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim && vim -c 'PlugInstall' -c 'qa!'
 
+### Interactive stuff ###
+
 # Start ssh-agent if needed
 HOSTNAME="$(hostname)"
 export SSH_AUTH_SOCK="${HOME}/.ssh/ssh-agent.${HOSTNAME}.sock"
@@ -30,7 +32,6 @@ test $? -ge 2 && ssh-agent -a "${SSH_AUTH_SOCK}" >/dev/null
 export TERM='xterm-256color'
 
 export PATH="${HOME}/.bin:${PATH}"
-type -p 'exa' > /dev/null && alias ls='exa' && alias ll='exa -alF' || alias ll='ls -al' && test "$(uname)" = 'Linux' && alias ls='ls --color=auto'
 
 test -x /bin/nu && exec /bin/nu
 test -x /run/current-system/sw/bin/nu && exec /run/current-system/sw/bin/nu
