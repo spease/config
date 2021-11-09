@@ -59,9 +59,7 @@ autoload -U promptinit
 promptinit
 #prompt bigfade
 
-source ~/.profile
-
-if type "omniprompt" > /dev/null; then
+if type -p "omniprompt" > /dev/null; then
   PROMPT='$(omniprompt $?)'
   PS2=" %B%F{blue}>%b%f "
   RPROMPT=
