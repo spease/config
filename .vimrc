@@ -63,7 +63,7 @@ let g:gruvbox_contrast_dark = 'hard'
 " ctrlp
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
-let g:ctrlp_root_markers = [ 'Cargo.toml', 'pom.xml', '.p4ignore' ]
+let g:ctrlp_root_markers = [ 'BUCK', 'Cargo.toml', 'pom.xml', '.p4ignore' ]
 if executable('rg')
   set grepprg=rg\ --color=never
   let g:ctrlp_user_command = 'rg %s --files --color=never --no-messages --glob ""'
