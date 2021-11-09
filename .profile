@@ -9,7 +9,7 @@ test -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' && source-sh
 test -e /etc/static/bashrc && source-sh "$(grep -o '/nix/store/[0-9a-z]\{32\}-set-environment' < /etc/static/bashrc)"
 test -e "${HOME}/.nix-profile/etc/profile.d/nix.sh" && source-sh "${HOME}/.nix-profile/etc/profile.d/nix.sh"
 
-type -p 'cargo' > /dev/null && export PATH="${HOME}/.cargo/bin:${PATH}"
+test -d "${HOME}/.cargo/bin" && export PATH="${HOME}/.cargo/bin:${PATH}"
 
 test -x /usr/share/nvm/nvm.sh && . /usr/share/nvm/nvm.sh
 export NVM_DIR="${HOME}/.nvm"
