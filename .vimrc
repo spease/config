@@ -36,10 +36,8 @@ call plug#begin('~/.vim/plugged')
   endfunction
   Plug 'PProvost/vim-ps1'
   Plug 'andreasvc/vim-256noir'
-  " Plug 'ctrlpvim/ctrlp.vim'
+  Plug 'ctrlpvim/ctrlp.vim'
   Plug 'dyng/ctrlsf.vim'
-  Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-  Plug 'junegunn/fzf.vim'
   Plug 'kchmck/vim-coffee-script'
   Plug 'morhetz/gruvbox'
   Plug 'puremourning/vimspector'
@@ -81,9 +79,6 @@ nmap     <C-F>p <Plug>CtrlSFPwordPath
 nnoremap <C-F>o :CtrlSFOpen<CR>
 nnoremap <C-F>t :CtrlSFToggle<CR>
 inoremap <C-F>t <Esc>:CtrlSFToggle<CR>
-
-" fzf
-nmap <C-P> :FZF<CR>
 
 " netrw
 let g:netrw_banner = 0
