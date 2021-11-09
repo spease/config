@@ -21,6 +21,9 @@ syntax on
 filetype on
 au BufNewFile,BufRead *.pde set filetype=cpp
 
+" Automatically resize panes when vim is resized
+au VimResized * wincmd =
+
 call plug#begin('~/.vim/plugged')
   function! BuildYCM(info)
     " info is a dictionary with 3 fields
