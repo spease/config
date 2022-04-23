@@ -23,10 +23,9 @@ export NVM_DIR="${HOME}/.nvm"
 ### Interactive stuff ###
 
 # Start ssh-agent if needed
-HOSTNAME="$(hostname)"
-export SSH_AUTH_SOCK="${HOME}/.ssh/ssh-agent.${HOSTNAME}.sock"
-ssh-add -l > /dev/null 2> /dev/null
-test $? -ge 2 && ssh-agent -a "${SSH_AUTH_SOCK}" >/dev/null
+! test -S "${HOME}/.ssh/ssh_auth_sock" && eval "$(ssh-agent)" && ln -sf "${SSH_AUTH_SOCK}" "${HOME}/.ssh/ssh_auth_sock"
+export SSH_AUTH_SOCK="${HOME}/.ssh/ssh_auth_sock"
+ssh-add -l > /dev/null || ssh-add
 
 # Set color shell
 export TERM='xterm-256color'
