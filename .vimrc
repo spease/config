@@ -34,6 +34,7 @@ call plug#begin('~/.vim/plugged')
       !./install.py --all
     endif
   endfunction
+  Plug 'LnL7/vim-nix'
   Plug 'PProvost/vim-ps1'
   Plug 'andreasvc/vim-256noir'
   Plug 'ctrlpvim/ctrlp.vim'
