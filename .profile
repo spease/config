@@ -23,15 +23,13 @@ export NVM_DIR="${HOME}/.nvm"
 ### Interactive stuff ###
 
 # Start ssh-agent if needed
-! test -S "${HOME}/.ssh/ssh_auth_sock" && eval "$(ssh-agent)" && ln -sf "${SSH_AUTH_SOCK}" "${HOME}/.ssh/ssh_auth_sock"
-export SSH_AUTH_SOCK="${HOME}/.ssh/ssh_auth_sock"
-ssh-add -l > /dev/null || ssh-add
+HOSTNAME="$(hostname)"
+test -z "${SSH_AUTH_SOCK}" && ! pgrep ssh-agent && export SSH_AUTH_SOCK="${HOME}/.ssh/ssh-agent.${HOSTNAME}.sock" && ( ssh-add -l > /dev/null 2> /dev/null; test $? -ge 2 && ssh-agent -a "${SSH_AUTH_SOCK}" >/dev/null )
 
 # Set color shell
+export EDITOR='vim'
 export TERM='xterm-256color'
 
 export PATH="${HOME}/.bin:${PATH}"
 
-test -x /bin/nu && exec /bin/nu
-test -x /run/current-system/sw/bin/nu && exec /run/current-system/sw/bin/nu
 test -x /bin/zsh && exec /bin/zsh
