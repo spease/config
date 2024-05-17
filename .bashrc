@@ -6,6 +6,8 @@
 ! test "${0}" = "bash" && ! test "${0}" = "-bash" && return
 [[ $- != *i* ]] && return
 
+[ -x "${NVM_DIR}/bash_completion" ] && source "${NVM_DIR}/bash_completion"
+
 # PS1='[\u@\h \W]\$ '
 PS1="$(omniprompt)"
 

@@ -11,8 +11,8 @@ test -e "${HOME}/.nix-profile/etc/profile.d/nix.sh" && source-sh "${HOME}/.nix-p
 
 test -d "${HOME}/.cargo/bin" && export PATH="${HOME}/.cargo/bin:${PATH}"
 
-test -x /usr/share/nvm/nvm.sh && . /usr/share/nvm/nvm.sh
-export NVM_DIR="${HOME}/.nvm"
+test -x /usr/share/nvm/nvm.sh && source-sh /usr/share/nvm/nvm.sh && export NVM_DIR="${HOME}/.nvm"
+test -s "${HOME}/.config/nvm/nvm.sh" && export NVM_DIR="${HOME}/.config/nvm" && source-sh "${NVM_DIR}/nvm.sh"
 
 # Install omniprompt
 ! test -x "${HOME}/.cargo/bin/omniprompt" && type -p 'cargo' > /dev/null && ! cargo install --git https://github.com/spease/omniprompt.git && type -p 'cargo' > /dev/null && cargo install --git https://github.com/spease/omniprompt.git --no-default-features
