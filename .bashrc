@@ -3,7 +3,7 @@
 #
 
 # If not running interactively, don't do anything
-! test "${0}" = "bash" && return
+! test "${0}" = "bash" && ! test "${0}" = "-bash" && return
 [[ $- != *i* ]] && return
 
 # PS1='[\u@\h \W]\$ '
