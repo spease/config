@@ -32,4 +32,9 @@ export TERM='xterm-256color'
 
 export PATH="${HOME}/.bin:${PATH}"
 
+export ANDROID_HOME=/opt/android-sdk
+export CHROME_EXECUTABLE=/usr/bin/google-chrome-stable
+export PATH="${PATH}:${ANDROID_HOME}/tools/bin"
+export PATH="${PATH}:${ANDROID_HOME}/platform-tools"
+
 test -x /bin/zsh && exec /bin/zsh
