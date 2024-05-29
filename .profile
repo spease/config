@@ -28,7 +28,6 @@ test -z "${SSH_AUTH_SOCK}" && ! pgrep ssh-agent > /dev/null && export SSH_AUTH_S
 
 # Set color shell
 export EDITOR='vim'
-export TERM='xterm-256color'
 
 export PATH="${HOME}/.bin:${PATH}"
 
