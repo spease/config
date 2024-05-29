@@ -52,6 +52,7 @@ call plug#end()
 let g:ale_rust_cargo_check_tests = 1
 let g:ale_rust_cargo_check_examples = 1
 let g:ale_rust_cargo_use_clippy = executable('cargo-clippy')
+let g:ale_linters = {'rust': ['analyzer']}
 
 nmap <F12> :ALEGoToDefinition<CR>
 
