@@ -43,7 +43,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'morhetz/gruvbox'
   Plug 'puremourning/vimspector'
   Plug 'rust-lang/rust.vim'
-  Plug 'w0rp/ale'
+  Plug 'dense-analysis/ale'
   " ciaranm/inkpot
   " chriskempson/base16-vim
   " Plug 'Valloric/YouCompleteMe', { 'do': function('BuildYCM') }
