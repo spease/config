@@ -1,13 +1,3 @@
-[colors.dim]
-black = "0x333333"
-blue = "0x6699cc"
-cyan = "0x66cccc"
-green = "0x99cc99"
-magenta = "0xcc99cc"
-red = "0xf2777a"
-white = "0xdddddd"
-yellow = "0xffcc66"
-
 [colors.bright]
 black = "0x666666"
 blue = "0x7aa6da"
@@ -21,6 +11,16 @@ yellow = "0xe7c547"
 [colors.cursor]
 cursor = "0xff0000"
 text = "0x000000"
+
+[colors.dim]
+black = "0x333333"
+blue = "0x6699cc"
+cyan = "0x66cccc"
+green = "0x99cc99"
+magenta = "0xcc99cc"
+red = "0xf2777a"
+white = "0xdddddd"
+yellow = "0xffcc66"
 
 [colors.normal]
 black = "0x000000"
