@@ -16,4 +16,4 @@ shopt -s checkwinsize
 
 #. ~/tools/bin/include-git-completion.bash
 #export PS1='[\D{%d %a %T} \u(h=\! c=\#) \w$(__git_ps1 " (%s)")] \$ '
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+[ -f "${HOME}/.fzf.bash" ] && source "${HOME}/.fzf.bash"
