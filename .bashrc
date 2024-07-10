@@ -9,7 +9,7 @@
 [ -x "${NVM_DIR}/bash_completion" ] && source "${NVM_DIR}/bash_completion"
 
 # PS1='[\u@\h \W]\$ '
-PS1="\$(omniprompt)"
+PS1="\$(omniprompt \$?)"
 
 shopt -s autocd
 shopt -s checkwinsize

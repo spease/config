@@ -36,4 +36,6 @@ export CHROME_EXECUTABLE=/usr/bin/google-chrome-stable
 export PATH="${PATH}:${ANDROID_HOME}/tools/bin"
 export PATH="${PATH}:${ANDROID_HOME}/platform-tools"
 
+export PS1="\$(omniprompt \$?)"
+
 test -x /bin/zsh && exec /bin/zsh
