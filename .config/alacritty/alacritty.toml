@@ -39,6 +39,8 @@ foreground = "0xff706e"
 [font]
 size = 12.0
 
-[shell]
+[terminal]
+
+[terminal.shell]
 args = ["-c", "test -x /run/current-system/sw/bin/tmux && exec /run/current-system/sw/bin/tmux new -As0 || test -x /bin/tmux && exec /bin/tmux new -As0 || test -x /bin/zsh && exec /bin/zsh || test -x /bin/bash && exec /bin/bash || exec /bin/sh"]
 program = "/bin/sh"
