@@ -29,7 +29,8 @@ test -z "${SSH_AUTH_SOCK}" && ! pgrep ssh-agent > /dev/null && export SSH_AUTH_S
 # Set color shell
 export EDITOR='vim'
 
-export PATH="${HOME}/.bin:${PATH}"
+test -d "${HOME}/bin" && export PATH="${HOME}/bin:${PATH}"
+test -d "${HOME}/.local/bin" && export PATH="${HOME}/.local/bin:${PATH}"
 
 export ANDROID_HOME=/opt/android-sdk
 export CHROME_EXECUTABLE=/usr/bin/google-chrome-stable
