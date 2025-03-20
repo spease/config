@@ -9,8 +9,10 @@ test -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' && source-sh
 test -e /etc/static/bashrc && source-sh "$(grep -o '/nix/store/[0-9a-z]\{32\}-set-environment' < /etc/static/bashrc)"
 test -e "${HOME}/.nix-profile/etc/profile.d/nix.sh" && source-sh "${HOME}/.nix-profile/etc/profile.d/nix.sh"
 
+# Setup cargo
 test -d "${HOME}/.cargo/bin" && export PATH="${HOME}/.cargo/bin:${PATH}"
 
+# Setup nvm
 test -x /usr/share/nvm/nvm.sh && source-sh /usr/share/nvm/nvm.sh && export NVM_DIR="${HOME}/.nvm"
 test -s "${HOME}/.config/nvm/nvm.sh" && export NVM_DIR="${HOME}/.config/nvm" && source-sh "${NVM_DIR}/nvm.sh"
 
@@ -29,14 +31,20 @@ test -z "${SSH_AUTH_SOCK}" && ! pgrep ssh-agent > /dev/null && export SSH_AUTH_S
 # Set color shell
 export EDITOR='vim'
 
+# Ubuntu compatibility
 test -d "${HOME}/bin" && export PATH="${HOME}/bin:${PATH}"
+
+# XDG user-specific executable files
 test -d "${HOME}/.local/bin" && export PATH="${HOME}/.local/bin:${PATH}"
 
+# Android SDK
 export ANDROID_HOME=/opt/android-sdk
 export CHROME_EXECUTABLE=/usr/bin/google-chrome-stable
 export PATH="${PATH}:${ANDROID_HOME}/tools/bin"
 export PATH="${PATH}:${ANDROID_HOME}/platform-tools"
 
+# Set prompt to omniprompt
 export PS1="\$(omniprompt \$?)"
 
+# Switch to zsh for shell if available
 test -x /bin/zsh && exec /bin/zsh
