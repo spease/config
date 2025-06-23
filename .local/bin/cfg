@@ -1,4 +1,4 @@
 #!/bin/sh
 # https://medium.com/@augusteo/simplest-way-to-sync-dotfiles-and-config-using-git-14051af8703a
-# git clone --bare git@github.com:spease/config.git ${HOME}/.cfg && git --git-dir=${HOME}/.cfg config --local status.showUntrackedFiles no && alias cfg="/usr/bin/git --git-dir=${HOME}/.cfg/ --work-tree=${HOME}" && cfg checkout
+# git clone --bare https://github.com/spease/config.git ${HOME}/.cfg && git --git-dir=${HOME}/.cfg config --local status.showUntrackedFiles no && git --git-dir=${HOME}/.cfg/ --work-tree=${HOME}" checkout
 /usr/bin/git --git-dir "${HOME}/.cfg/" --work-tree "${HOME}" "$@"
