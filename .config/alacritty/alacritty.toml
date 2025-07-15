@@ -13,28 +13,28 @@ cursor = "0xff0000"
 text = "0x000000"
 
 [colors.dim]
-black = "0x333333"
+black = "0x000000"
 blue = "0x6699cc"
 cyan = "0x66cccc"
-green = "0x99cc99"
+green = "0x505000"
 magenta = "0xcc99cc"
-red = "0xf2777a"
+red = "0x400000"
 white = "0xdddddd"
-yellow = "0xffcc66"
+yellow = "0x805000"
 
 [colors.normal]
 black = "0x000000"
 blue = "0x7aa6da"
 cyan = "0x70c0ba"
-green = "0xb9ca4a"
+green = "0xa0a000"
 magenta = "0xc397d8"
-red = "0xd54e53"
+red = "0xd03000"
 white = "0xffffff"
-yellow = "0xe6c547"
+yellow = "0xe0a000"
 
 [colors.primary]
 background = "0x000000"
-foreground = "0xff706e"
+foreground = "0xd03000"
 
 [font]
 size = 12.0
