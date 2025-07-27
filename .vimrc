@@ -183,12 +183,14 @@ autocmd FileType rust setlocal syntax=
 let g:lsp_diagnostics_enabled = 1
 let g:lsp_diagnostics_highlights_enabled = 1
 let g:lsp_highlight_references_enabled = 1
+let g:lsp_highlights_enabled = 1
 let g:lsp_inlay_hints_enabled = 1
 let g:lsp_log_verbose = 1
 let g:lsp_log_file = expand('~/vim-lsp.log')
 let g:lsp_semantic_force = 1
 let g:lsp_semantic_enabled = 1
 let g:lsp_semantic_highlighting = 1
+let g:lsp_signs_enabled = 1
 
 autocmd User lsp_server_init call timer_start(500, {-> execute('doautocmd BufEnter')})
 
