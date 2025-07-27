@@ -178,8 +178,6 @@ if executable('rg')
 endif
 let g:ctrlp_clear_cache_on_exit = 0
 
-autocmd FileType python syntax clear
-autocmd FileType python setlocal syntax=
 autocmd FileType rust syntax clear
 autocmd FileType rust setlocal syntax=
 let g:lsp_diagnostics_enabled = 1
