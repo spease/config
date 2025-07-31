@@ -26,7 +26,7 @@ test -s "${HOME}/.config/nvm/nvm.sh" && export NVM_DIR="${HOME}/.config/nvm" && 
 
 # Start ssh-agent if needed
 HOSTNAME="$(uname -n)"
-test -z "${SSH_AUTH_SOCK}" && ! pgrep ssh-agent > /dev/null && export SSH_AUTH_SOCK="${HOME}/.ssh/ssh-agent.${HOSTNAME}.sock" && ( ssh-add -l > /dev/null 2> /dev/null; test $? -ge 2 && ssh-agent -a "${SSH_AUTH_SOCK}" >/dev/null )
+test -z "${SSH_AUTH_SOCK}" && export SSH_AUTH_SOCK="${HOME}/.ssh/ssh-agent.${HOSTNAME}.sock" && ( ssh-add -l > /dev/null 2> /dev/null; test $? -ge 2 && (rm -f "$SSH_AUTH_SOCK"; ssh-agent -a "${SSH_AUTH_SOCK}" >/dev/null) )
 
 # Set color shell
 export EDITOR='vim'
